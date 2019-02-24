@@ -1,0 +1,5 @@
+{
+  "html.format.preserveNewLines": false,
+  "html.validate.styles": false,
+  "html.format.wrapAttributes": "force"
+}
