@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom';
 import { deletePost, addLike, removeLike } from '../../actions/postActions';
 
 class PostItem extends Component {
-  onDeleteClick(id) {
+  onDeleteClick = id => {
     this.props.deletePost(id);
-  }
+  };
 
-  onLikeClick(id) {
+  onLikeClick = id => {
     this.props.addLike(id);
-  }
+  };
 
-  onUnlikeClick(id) {
+  onUnlikeClick = id => {
     this.props.removeLike(id);
-  }
+  };
 
   findUserLike(likes) {
     const { auth } = this.props;

@@ -3,7 +3,8 @@ import {
   GET_POSTS,
   GET_POST,
   POST_LOADING,
-  DELETE_POST
+  DELETE_POST,
+  UPDATE_LIKES
 } from '../actions/types';
 
 const initialState = {
@@ -35,6 +36,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         posts: [action.payload, ...state.posts]
+      };
+    case UPDATE_LIKES:
+      return {
+        ...state,
+        posts: state.posts.map(post =>
+          post._id === action.payload.id
+            ? { ...post, likes: action.payload.likes }
+            : post
+        ),
+        loading: false
       };
     case DELETE_POST:
       return {
